@@ -1,0 +1,34 @@
+
+<UserControl x:Class="Vedo.Arc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vedo"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Canvas x:Name="ArcCanvas">
+            <Path x:Name="ArcPath" Stroke="Black" StrokeThickness="2">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure x:Name="ArcFigure">
+                            <ArcSegment x:Name="ArcSegment" 
+                                        Size="100,100" 
+                                        IsLargeArc="False" 
+                                        SweepDirection="Clockwise"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+        </Canvas>
+        <StackPanel VerticalAlignment="Bottom" Margin="10">
+            <Slider x:Name="StartAngleSlider" Minimum="0" Maximum="360" 
+                    ValueChanged="Slider_ValueChanged"/>
+            <Slider x:Name="EndAngleSlider" Minimum="0" Maximum="360" 
+                    ValueChanged="Slider_ValueChanged"/>
+            <Slider x:Name="RadiusSlider" Minimum="10" Maximum="200" 
+                    ValueChanged="Slider_ValueChanged"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
